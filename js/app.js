@@ -38,6 +38,8 @@ $(document).ready(function(){
     email = $('#contact-email').val();
     subject = $('#contact-subject').val();
     message = $('#contact-message').val()
+    
+    console.log(name,email,subject,message)
   }
 
 
@@ -61,7 +63,7 @@ $(document).ready(function(){
       data:{
         'key':'rRlpJG5kZCxInUggWA8QWA',
         'message':{
-          'from_email': 'benjamin.mark.adam@gmail.com',
+          'from_email': email,
           'to': [
               {
                 'email': 'benjamin.mark.adam@gmail.com',
