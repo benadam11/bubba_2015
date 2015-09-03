@@ -1,0 +1,16 @@
+
+.photo-collage {
+	position: absolute;
+	height: 100%;
+	width: 5400px;
+	background: transparent url(../images/collage.jpg) repeat-x left top;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-animation: collage 50s linear infinite;
+	-moz-animation: collage 50s linear infinite;
+	-ms-animation: collage 50s linear infinite;
+	animation: collage 50s linear infinite;
+}

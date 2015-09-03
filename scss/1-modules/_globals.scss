@@ -1,0 +1,165 @@
+	/*******************************
+Global Styles
+********************************/
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+$pink: #dF008A;
+$white: #ffffff;
+$grey:#282828;
+$light-grey:#BDBDBD;
+
+html, body
+{
+    height: 100%;
+}
+body{
+  -webkit-font-smoothing: antialiased;
+  color:$grey;
+}
+
+/*Helper Classes*/
+.white{
+	color: $white;
+}
+.pink{
+	color:$pink;
+}
+.grey{
+	color:$grey;
+}
+.light-grey{
+  color:$light-grey;
+}
+.center{
+	text-align: center;
+}
+.space{
+	@include space;
+}
+.more-space{
+  @include more-space;
+}
+a{
+	color:#dF008A;
+	text-decoration:none;
+}
+a:hover{
+	color:#B60372
+
+}
+h1,
+h2,
+{
+	text-transform: uppercase;
+	@include main-font;
+}
+h1{
+	font-size: 8em; /*16x8= 112px*/
+	margin-bottom: .25em;
+
+}
+h2{
+	font-size: 3em;
+	margin-bottom: 1em;
+}
+
+h3{
+	font-size: 2em;
+	margin-bottom: .5em;
+	@include secondary-font;
+}
+h4{
+	font-size: 2em;
+	margin-bottom: .75em;
+	@include main-font;
+}
+h6{
+	font-size: 1em;
+	@include main-font;
+}
+p{
+	font-size: 1.25em;
+	margin-bottom: .25em;
+  line-height:1.75em;
+	@include main-font;
+}
+ul{
+		list-style:none;
+}
+li{
+
+	text-decoration:none;
+}
+
+h1.section-title{
+	position:relative;
+	text-align:center;
+	color:$pink;
+	margin-bottom:.75em;
+
+	&:after{
+		content:'';
+		position:absolute;
+		top:160px;
+		left:44%;
+		width:120px;
+		border-bottom:4px solid $pink;
+
+	}
+}
+
+h2.section-title{
+	position:relative;
+	text-align:center;
+	color:$pink;
+	margin-bottom:3em;
+
+	&:after{
+		content:'';
+		position:absolute;
+		top:100px;
+		left:195px;
+		width:128px;
+		border-bottom:4px solid $pink;
+
+	}
+}
+header{
+	position:relative;
+	width:100%;
+	margin:0 auto;
+	text-align: center;
+}
+header.section-header{
+	position:relative;
+	max-width:40em;
+	margin:0 auto;
+	text-align: center;
+}
+
+section{
+  padding-top:8em;
+  padding-bottom:8em;
+}
+
+@media (min-width: 20rem) and (max-width: 50rem){
+	 h1 {
+		font-size:4.5em;
+	}
+	h1.section-title,
+	h2.section-title{
+		margin-bottom: 1.5em;
+	&:after{
+		display:none;
+
+	}
+	}
+
+	}
+

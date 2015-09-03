@@ -1,0 +1,70 @@
+form{
+	div.form-input{
+		margin-bottom:3em;
+
+		input[type=text],
+		textarea{
+			@include border-radius(10px);
+			box-shadow: 0px 0px 0px 1pt $light-grey;
+			border:0px solid $light-grey;
+			height:4em;
+			background:none;
+			display:block;
+			padding-left:16px;
+			-webkit-appearance: none;
+			width:100%;
+
+			&:required:focus{
+	  			box-shadow: 0px 0px 0px 1pt $pink;
+					outline:0;
+					border:none;
+				}
+			&:required{
+				box-shadow: 0px 0px 0px 1pt $light-grey;
+				outline:0;
+			}
+
+			}
+	}
+
+	/*@media (min-width: 20rem) and (max-width: 30rem){
+		#field-contact-name{
+		padding-right:0px;
+	}
+
+	#field-contact-email{
+		padding-left:0px;
+
+	}
+
+	}*/
+
+
+	#contact-message{
+		height:200px;
+		padding-top:16px;
+		background:none;
+	}
+
+	#submit-button{
+		-webkit-appearance: none;
+		background-color:$pink;
+		border:none;
+		display:inline-block;
+		height:3em;
+		width:100px;
+		color:$white;
+		@include border-radius(12px);
+	}
+
+	/* AJAX Button */
+
+	button.ajax .fa {
+	  display: none;
+	  margin-right: 3px;
+	}
+
+	button.ajax.sending .fa-spin { display: inline-block }
+	button.ajax.sent .fa-check { display: inline-block }
+
+}

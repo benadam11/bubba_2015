@@ -1,0 +1,42 @@
+
+nav{
+	margin: 0 auto;
+	padding-top:2em;
+	padding-bottom:2em;
+	text-align:center;
+	top:20px;
+
+	a{
+		color:$white;
+		font-size:1.25em;
+		display: inline-block;
+		margin-left:4em;
+		text-transform:uppercase;
+		@include main-font;
+
+		&:first-child{
+			margin-left:0em;
+		}
+		&:hover{
+			color:$pink;
+		}
+	}
+}
+.navigation.stuck{
+	background-color:rgba(40, 40, 40, .8);
+	position:fixed;
+	top:0;
+	z-index: 10;
+
+	nav{
+		padding-top:1em;
+		padding-bottom:1em;
+	}
+}
+
+@media (min-width: 20rem) and (max-width: 40rem) {
+
+	nav{
+		display:none;
+	}
+}

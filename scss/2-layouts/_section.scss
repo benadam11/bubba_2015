@@ -1,0 +1,189 @@
+.city-background{
+	background: url('../images/Crowd.jpg') no-repeat center bottom;
+	@include background-cover;
+	padding:6em;
+
+	img{
+		width:100%;
+		max-width: 400px;
+		height:auto;
+
+	}
+
+}
+.city-selector{
+	border-bottom:1em solid #dF008A;
+
+	img{
+		max-width:50px;
+		margin-bottom: 1em;
+	}
+	h4{
+		font-size: 1.25em;
+		color:$grey;
+	}
+	.column.third{
+		margin-bottom:4em;
+	}
+}
+
+.intro-footer{
+	background-color: $grey;
+	padding:3em;
+	text-align: center;
+	border-bottom:1em solid #dF008A;
+
+	img{
+		max-width: 50px;
+	}
+}
+
+.facebook-site{
+	background: url('../images/facebook-hover.svg') no-repeat;
+	width:30px;
+	height:30px;
+	display:block;
+	position:absolute;
+	top:40px;
+	right:40px;
+	text-indent:-9999px;
+}
+
+.twitter-site{
+	background: url('../images/twitter-hover.svg') no-repeat;
+	width:30px;
+	height:30px;
+	display:block;
+	position:absolute;
+	top:80px;
+	right:40px;
+	text-indent:-9999px;
+}
+
+section.navigation{
+		background-color:rgba(40, 40, 40, 1);
+		height:auto;
+		width:100%;
+		padding-top:0px;
+		padding-bottom: 0px;
+		/*position:relative;
+		z-index:100;*/
+}
+
+.hero{
+	background: url('../images/Crowd.jpg') no-repeat center bottom;
+	@include background-cover;
+	height:805px;
+	width:100%;
+	position: relative;
+	text-align:center;
+
+	h4{ font-size: 1.25em; }
+}
+
+.intro{
+		max-width: 100%;
+		height:auto;
+		position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+	}
+
+@media (min-width: 20rem) and (max-width: 30rem){
+	.hero{
+		min-height:600px;
+		padding-top:12em;
+		padding-bottom:10em;
+	}
+
+	.intro img{
+		max-width: 280px;
+	}
+}
+
+.artist-section{
+	border-top:1em solid #dF008A;
+	border-bottom:1em solid #dF008A;
+}
+
+.tickets{
+	background:url('../images/GCU-background.jpg') no-repeat center top;
+	@include background-cover;
+}
+
+.tickets-opelousas{
+	background:url('../images/Opelousas_bg.jpg') no-repeat center top;
+	@include background-cover;
+
+	img{
+		max-width:150px;
+		height:auto;
+	}
+}
+
+.tickets-windermere{
+	background:url('../images/Windermere-bg.jpg') no-repeat center top;
+	@include background-cover;
+
+	img{
+		max-width:50px;
+		height:auto;
+	}
+}
+
+section.details{
+	background:url('../images/Info-Background.jpg') no-repeat center top;
+	@include background-cover;
+	border-bottom:1em solid #dF008A;
+	padding-bottom:0px;
+	position:relative;
+
+	.event-detail{
+		max-width:45em;
+		margin-bottom:6em;
+	}
+	img{
+		position:absolute;
+		bottom:0px;
+		right:-60px;
+		width:100%;
+		max-width:400px;
+		height:auto;
+	}
+
+}
+
+@media (min-width: 20rem) and (max-width: 60rem){
+	section.details{
+		img{
+			position:relative;
+			right: auto;
+			bottom: auto;
+			display: block;
+			margin: 0 auto;
+		}
+		.event-detail{
+		max-width:100%;
+	}
+	}
+}
+
+.photos{
+	background-color:#282828;
+	border-top:1em solid #dF008A;
+	border-bottom:1em solid #dF008A;
+	min-height:800px;
+	position:relative;
+	overflow:hidden;
+}
+.contact,
+.about
+{
+	border-bottom:1em solid #dF008A;
+}
+
+footer{
+	background-color:#282828;
+	width:100%;
+}
