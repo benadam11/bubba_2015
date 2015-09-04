@@ -69,22 +69,22 @@ gulp.task('images', function(){
 
 // Move Files Into the Build Directory
 gulp.task('move',function(){
-  gulp.src(filesToMove, { base: './' })
+  return gulp.src(filesToMove, { base: './' })
     .pipe(gulp.dest(dist));
 })
 
 // Build that mug
 gulp.task('build', function(callback){
-  runSequence('clean',['js','sass','move','images'],callback );
+  runSequence('clean',['js','sass','move','images', 'watch'], callback );
 });
 
 // Watch Files
 gulp.task('watch', function(){
-  gulp.watch("*.html").on("change", browserSync.reload);
+  gulp.watch("*.html", ['move']).on("change", browserSync.reload);
   gulp.watch('scss/**/*.scss', ['sass']).on("change", browserSync.reload);
   gulp.watch('js/*.js', ['js']).on("change", browserSync.reload);
   gulp.watch('images/*', ['images']).on("change", browserSync.reload);
 });
 
 // Default 
-gulp.task('default', ['build', 'serve', 'watch']);
+gulp.task('default', ['build', 'serve']);

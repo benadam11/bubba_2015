@@ -1,15 +1,15 @@
 /* Your scripts go here */
 
 
-$('.intro').hide();
+// $('.intro').hide();
 
 $(document).ready(function(){
     
   $('.hero').fadeIn("slow");
 
-  setTimeout(function() {
-    $('.intro').show().addClass('slideUp');
-  }, 800);
+  // setTimeout(function() {
+  //   $('.intro').show().addClass('slideUp');
+  // }, 800);
 
   var sticky = new Waypoint.Sticky({
     element: $('.navigation')[0]
@@ -38,7 +38,7 @@ $(document).ready(function(){
     email = $('#contact-email').val();
     subject = $('#contact-subject').val();
     message = $('#contact-message').val()
-    
+
     console.log(name,email,subject,message)
   }
 
@@ -50,6 +50,7 @@ $(document).ready(function(){
 
   function resetForm(){
     $('#submit-form')[0].reset();
+    $('#submit-button').html('Send');
   }
 
   // Form Ajax Request
@@ -61,12 +62,12 @@ $(document).ready(function(){
       type:"POST",
       url: "https://mandrillapp.com/api/1.0/messages/send.json" ,
       data:{
-        'key':'rRlpJG5kZCxInUggWA8QWA',
+        'key':'X06ENjpgtIkr-uA23gO6NA',
         'message':{
           'from_email': email,
           'to': [
               {
-                'email': 'benjamin.mark.adam@gmail.com',
+                'email': 'kf@prosportmanagement.com',
                 'name': 'Prosport Management',
                 'type': 'to'
               }
@@ -109,10 +110,10 @@ $(document).ready(function(){
           .removeClass('sending')
           .addClass('sent')
           .html('<i class="fa fa-check"></i> Sent')
-          .prop("disabled", true);
-        //Add Success Message
-        // $('.response-container').html('Thank you! We will contact you shortly with some more information about our programs.');
-        resetForm();
+          setTimeout(function() {
+            resetForm();
+          }, 800);
+        
       }
     });
 

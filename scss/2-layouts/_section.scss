@@ -70,7 +70,7 @@ section.navigation{
 		z-index:100;*/
 }
 
-.hero{
+.hero {
 	background: url('../images/Crowd.jpg') no-repeat center bottom;
 	@include background-cover;
 	height:805px;
@@ -78,7 +78,7 @@ section.navigation{
 	position: relative;
 	text-align:center;
 
-	h4{ font-size: 1.25em; }
+	h4 { font-size: 1.25em; }
 }
 
 .intro{
@@ -97,7 +97,7 @@ section.navigation{
 		padding-bottom:10em;
 	}
 
-	.intro img{
+	.intro img {
 		max-width: 280px;
 	}
 }
@@ -108,28 +108,35 @@ section.navigation{
 }
 
 .tickets{
-	background:url('../images/GCU-background.jpg') no-repeat center top;
+	background:url('../images/pbc_bw.jpg') no-repeat center top;
 	@include background-cover;
 }
 
-.tickets-opelousas{
-	background:url('../images/Opelousas_bg.jpg') no-repeat center top;
-	@include background-cover;
+.image-list {
 
-	img{
-		max-width:150px;
-		height:auto;
+	text-align:center;
+
+	li {
+		display: inline-block;
+		margin-left: 40px;
+		margin-right: 40px;
+		margin-bottom: 40px;
 	}
 }
 
-.tickets-windermere{
-	background:url('../images/Windermere-bg.jpg') no-repeat center top;
-	@include background-cover;
+.image-list.small {
 
-	img{
-		max-width:50px;
-		height:auto;
+	li {
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 20px;
 	}
+
+	// img { width: 60px; height:100%; min-height:40px; }
+}
+
+.radio-partners {
+	border-bottom:1em solid #dF008A;
 }
 
 section.details{
