@@ -1,19 +1,51 @@
 /* Your scripts go here */
 
+var tag = document.createElement('script');
 
-// $('.intro').hide();
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: '2rtxQARw0wA',
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  console.log('player is ready to roll')
+}
+
+var done = false;
+
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
+    done = true;
+  }
+}
+function playVideo(){
+  player.playVideo();
+}
+function stopVideo() {
+  player.stopVideo();
+}
+
 
 $(document).ready(function(){
     
   $('.hero').fadeIn("slow");
 
-  // setTimeout(function() {
-  //   $('.intro').show().addClass('slideUp');
-  // }, 800);
-
   var sticky = new Waypoint.Sticky({
     element: $('.navigation')[0]
-  })
+  });
 
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -28,6 +60,25 @@ $(document).ready(function(){
     }
   });
 
+/*
+ * Modal Interaction 
+ */
+
+  $('#js-modal-trigger').on('click', function(e){
+    e.preventDefault();
+    $('.modal-bg').fadeIn();
+    playVideo();
+  });
+
+  $('.close-button, .modal-bg').on('click', function(e){
+    e.preventDefault();
+    $('.modal-bg').fadeOut();
+    stopVideo();
+  });
+
+  $('.playBtn').click(function(){
+    return false;
+  });
 
 
   // Form
@@ -39,7 +90,6 @@ $(document).ready(function(){
     subject = $('#contact-subject').val();
     message = $('#contact-message').val()
 
-    console.log(name,email,subject,message)
   }
 
 
@@ -74,7 +124,7 @@ $(document).ready(function(){
             ],
           'autotext': 'true',
           'subject': subject,
-          'html': '<p>Name: '+ name +
+          'html': '<p>Name: ' + name +
                     '<br>' + 'Email: ' + email + 
                     '<br>' + 'Message: ' + message +
                   '</p>'
@@ -93,8 +143,7 @@ $(document).ready(function(){
           .addClass('error')
           .html('<i class="fa fa-times"></i> Try again.');
 
-        $('.response-container').html('Looks like something went wrong. Click the reset button and try again.');
-
+        
         $('#submit-button').on('click', function(e){
           e.preventDefault();
           resetForm();
@@ -103,7 +152,8 @@ $(document).ready(function(){
 
       },
       success: function (data){
-        //Send GA Converstion
+        
+        ga('send', 'event', 'form', 'success');
         
         //Update Button
         $('#submit-button')
@@ -112,7 +162,7 @@ $(document).ready(function(){
           .html('<i class="fa fa-check"></i> Sent')
           setTimeout(function() {
             resetForm();
-          }, 800);
+          }, 1200);
         
       }
     });

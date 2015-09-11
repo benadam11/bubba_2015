@@ -4,9 +4,16 @@
 
 	figure{
 		margin-bottom:1em;
+		background-color:$white-grey;
+		padding-top:.5em;
+		padding-left:.5em;
+		padding-right:.5em;
+		padding-bottom:.2em;
+		a {
+			display:block;
+		}
 		img{
 			width:100%;
-			max-width:300px;
 			height:auto;
 		}
 	}

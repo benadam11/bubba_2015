@@ -13,6 +13,7 @@ $pink: #dF008A;
 $white: #ffffff;
 $grey:#282828;
 $light-grey:#BDBDBD;
+$white-grey:#EDEFF2;
 
 html, body
 {
@@ -149,17 +150,13 @@ section{
 }
 
 @media (min-width: 20rem) and (max-width: 50rem){
-	 h1 {
-		font-size:4.5em;
-	}
+	h1 { font-size:4.5em; }
 	h1.section-title,
 	h2.section-title{
 		margin-bottom: 1.5em;
-	&:after{
-		display:none;
 
-	}
+		&:after{ display:none; }
 	}
 
-	}
+}
 

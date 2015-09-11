@@ -1,31 +1,4 @@
-.city-background{
-	background: url('../images/Crowd.jpg') no-repeat center bottom;
-	@include background-cover;
-	padding:6em;
 
-	img{
-		width:100%;
-		max-width: 400px;
-		height:auto;
-
-	}
-
-}
-.city-selector{
-	border-bottom:1em solid #dF008A;
-
-	img{
-		max-width:50px;
-		margin-bottom: 1em;
-	}
-	h4{
-		font-size: 1.25em;
-		color:$grey;
-	}
-	.column.third{
-		margin-bottom:4em;
-	}
-}
 
 .intro-footer{
 	background-color: $grey;
@@ -33,9 +6,31 @@
 	text-align: center;
 	border-bottom:1em solid #dF008A;
 
-	img{
-		max-width: 50px;
+	img{ max-width: 50px; }
+}
+
+.playBtn {
+	color:$white;
+	display:block;
+	position:relative;
+	width:60px;
+	height:60px;
+	border-radius:100%;
+	border:2px solid $white;
+	margin: 0 auto;
+
+	&:hover{
+		border-color:$pink;
 	}
+
+	i {
+		position:absolute;
+		position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-40%, -50%);
+	}
+
 }
 
 .facebook-site{
@@ -66,14 +61,12 @@ section.navigation{
 		width:100%;
 		padding-top:0px;
 		padding-bottom: 0px;
-		/*position:relative;
-		z-index:100;*/
 }
 
 .hero {
 	background: url('../images/Crowd.jpg') no-repeat center bottom;
 	@include background-cover;
-	height:805px;
+	height:800px;
 	width:100%;
 	position: relative;
 	text-align:center;
@@ -82,19 +75,18 @@ section.navigation{
 }
 
 .intro{
-		max-width: 100%;
-		height:auto;
-		position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
+		@include center;
+
+    img{
+    	max-width:600px;
+    }
 	}
 
 @media (min-width: 20rem) and (max-width: 30rem){
 	.hero{
-		min-height:600px;
-		padding-top:12em;
-		padding-bottom:10em;
+		height:600px;
+		padding-top:4em;
+		padding-bottom:4em;
 	}
 
 	.intro img {
@@ -107,10 +99,7 @@ section.navigation{
 	border-bottom:1em solid #dF008A;
 }
 
-.tickets{
-	background:url('../images/pbc_bw.jpg') no-repeat center top;
-	@include background-cover;
-}
+
 
 .image-list {
 
@@ -170,9 +159,7 @@ section.details{
 			display: block;
 			margin: 0 auto;
 		}
-		.event-detail{
-		max-width:100%;
-	}
+		.event-detail{ max-width:100%; }
 	}
 }
 
@@ -185,10 +172,9 @@ section.details{
 	overflow:hidden;
 }
 .contact,
-.about
-{
-	border-bottom:1em solid #dF008A;
-}
+.about { border-bottom:1em solid #dF008A; }
+
+.charity { border-top: 1em solid #dF008A;}
 
 footer{
 	background-color:#282828;

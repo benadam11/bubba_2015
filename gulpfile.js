@@ -3,6 +3,8 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
+    uncss = require('gulp-uncss'),
+    minifyCss = require('gulp-minify-css'),
     browserSync = require('browser-sync'),
     uglify = require('gulp-uglify'),
     clean = require('gulp-clean'),
@@ -44,9 +46,10 @@ gulp.task('sass', function () {
     .pipe(sass({
       includePaths:[normalize, bourbon, neat],
       outputStyle:'compressed'
-    })
-    .on('error', sass.logError))
+    }).on('error', sass.logError))
+    // .pipe(uncss({html: ['index.html']}))
     .pipe(autoprefixer({ browsers:['> 5% in US']}))
+    // .pipe(minifyCss())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(cssDest));
 

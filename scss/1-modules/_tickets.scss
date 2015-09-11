@@ -1,19 +1,20 @@
 .tickets{
+	background:url('../images/pbc_bw.jpg') no-repeat center top;
+	@include background-cover;
+
 	.section-title h4{
 		margin-bottom:1em;
 	}
+	
 	h3{
 		line-height:1.5em;
 		font-size:2em;
-
 	}
-	img{
-		max-width:250px;
-		margin-bottom:4em;
-	}
+	
 	.buttons{
 		margin-bottom: 4em;
 	}
+
 	p{
 		font-size: 1em;
 	}

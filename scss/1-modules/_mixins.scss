@@ -3,6 +3,15 @@
 @mixin space { padding-bottom:1em;}
 @mixin more-space {padding-bottom:2em;}
 
+@mixin center {
+  max-width: 100%;
+    height:auto;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
 @mixin transition-left{
     -webkit-transition: left .2s linear;
     -moz-transition: left .2s linear;
